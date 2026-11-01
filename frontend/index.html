@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ResQRoute – climate-aware route risk</title>
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand"><span class="logo">RR</span><div><h1>ResQRoute</h1><p>Evidence-bound route risk assessment</p></div></div>
+    <div id="pills" class="pills" aria-label="Integration status"></div>
+  </header>
+  <main class="layout">
+    <section class="card" id="form-card">
+      <h2>Plan a journey</h2>
+      <form id="route-form" novalidate>
+        <label>Origin<input id="origin" name="origin" maxlength="200" placeholder="e.g. Ambala" autocomplete="off" /></label>
+        <div class="err" id="err-origin"></div>
+        <label>Destination<input id="destination" name="destination" maxlength="200" placeholder="e.g. Sonipat" autocomplete="off" /></label>
+        <div class="err" id="err-destination"></div>
+        <label>Departure<input id="departure" name="departure" type="datetime-local" /></label>
+        <div class="err" id="err-departure"></div>
+        <button id="submit" class="primary" type="submit">Find routes &amp; assess risk</button>
+      </form>
+      <div id="form-status" class="status" role="status"></div>
+    </section>
+    <section class="card map-card" id="map-card">
+      <div id="map-banner"></div>
+      <div id="map" role="application" aria-label="Route map"></div>
+      <div class="legend" id="legend"></div>
+    </section>
+    <section class="card" id="routes-card"><h2>Route alternatives</h2><div id="routes"></div></section>
+    <section class="card" id="details-card"><h2>Risk &amp; weather evidence</h2><div id="details"><p class="muted">Search for a route to see its assessment.</p></div></section>
+    <section class="card ai" id="ai-card"><h2>AI agent analysis</h2><div id="ai"><p class="muted">Available after an assessment.</p></div></section>
+    <section class="card" id="trace-card"><h2>Assessment trace</h2><div id="trace"><p class="muted">Every processing step and its source is listed here.</p></div></section>
+  </main>
+  <footer class="foot">Weather warnings indicate potential exposure, not confirmed road closures. ResQRoute never treats missing data as safety.</footer>
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>
